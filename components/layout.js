@@ -9,7 +9,7 @@ export const siteTitle = 'Martin Solev - Personal Website'
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className={home ? styles.container : styles.containerMargin}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -28,26 +28,26 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {!home ? (
           <>
-             <>
-            <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
+            <>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a>
+                  <img
+                    src="/images/profile.jpg"
+                    className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                    alt={name}
+                  />
+                </a>
               </Link>
-            </h2>
-          </>
+              <h2 className={utilStyles.headingLg}>
+                <Link href="/">
+                  <a className={utilStyles.colorInherit}>{name}</a>
+                </Link>
+              </h2>
+            </>
           </>
         ) : (
-         <></>
-        )}
+            <></>
+          )}
       </header>
       <main>{children}</main>
       {!home && (
@@ -57,7 +57,7 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
-      
+
       <SocialLinks />
 
     </div>
