@@ -2,13 +2,10 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Date from './date'
 
-<style jsx>{`
-
-`}</style>
 
 export default function BlogSection({ posts }) {
     return (
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`} style={{ marginTop: '35px' }}>
+        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} posts-container`} style={{ marginTop: '35px' }}>
             <h2 className={utilStyles.headingLg}>Blog</h2>
             <ul className={utilStyles.list}>
                 {posts.map(({ id, published_at, title, slug }) => (
@@ -23,6 +20,12 @@ export default function BlogSection({ posts }) {
                     </li>
                 ))}
             </ul>
+
+            <style jsx>{`
+                .posts-container {
+                    min-height: 400px;
+                }
+            `}</style>
         </section>
     )
 }

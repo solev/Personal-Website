@@ -38,6 +38,8 @@ export default function Home({ allPostsData }) {
 
       <BlogSection posts={allPostsData} />
       
+
+      
     </Layout>
   )
 }
