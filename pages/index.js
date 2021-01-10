@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
-import { getDevPosts, getSortedPostsData } from '../lib/posts'
-import layoutStyles from '../components/layout.module.css'
+import { getDevPosts } from '../lib/posts'
 import utilStyles from '../styles/utils.module.css'
 import Typewriter from 'typewriter-effect';
 import BlogSection from '../components/blog-section'
+import Image from 'next/image'
 
 export default function Home({ allPostsData }) {
   return (
@@ -13,9 +13,11 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className="hero">
-        <img
+        <Image
           src="/images/profile.jpg"
-          className={`${layoutStyles.headerHomeImage} ${utilStyles.borderCircle}`}
+          width={144}
+          height={144}
+          className={`${utilStyles.borderCircle}`}
         />
         <h1 className={utilStyles.heading2Xl}>Martin Solev</h1>
         <p className={utilStyles.headingLg}>
@@ -37,9 +39,6 @@ export default function Home({ allPostsData }) {
       </section>
 
       <BlogSection posts={allPostsData} />
-      
-
-      
     </Layout>
   )
 }
