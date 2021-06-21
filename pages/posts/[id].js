@@ -9,7 +9,7 @@ export default function Post({ postData }) {
     return (
         <Layout>
             <Head>
-                <title>{postData.title}</title>
+                <title>{postData.title} - Martin Solev</title>
                 <link rel="stylesheet"
                     href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/darkula.css"></link>
             </Head>

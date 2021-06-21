@@ -6,6 +6,8 @@ import Typewriter from 'typewriter-effect';
 import BlogSection from '../components/blog-section'
 import Image from 'next/image'
 
+import profilePicture from '../public/images/profile.jpg'
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -14,10 +16,11 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className="hero">
         <Image
-          src="/images/profile.jpg"
+          src={profilePicture}
           width={144}
           height={144}
           className={`${utilStyles.borderCircle}`}
+          placeholder='blur'
         />
         <h1 className={utilStyles.heading2Xl}>Martin Solev</h1>
         <p className={utilStyles.headingLg}>
