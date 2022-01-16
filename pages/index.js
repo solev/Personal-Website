@@ -21,6 +21,7 @@ export default function Home({ allPostsData }) {
           height={144}
           className={`${utilStyles.borderCircle}`}
           placeholder='blur'
+          alt='Profile image'
         />
         <h1 className={utilStyles.heading2Xl}>Martin Solev</h1>
         <p className={utilStyles.headingLg}>

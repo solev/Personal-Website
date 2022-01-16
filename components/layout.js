@@ -45,6 +45,7 @@ export default function Layout({ children, home }) {
                     className={`${utilStyles.borderCircle}`}
                     alt={name}
                     placeholder='blur'
+                    alt='Profile image'
                   />
                 </a>
               </Link>
